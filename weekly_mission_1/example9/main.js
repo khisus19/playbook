@@ -1,4 +1,4 @@
-const Pokemon = require('./pokemon')
+const Pokemon = require('./Pokemon')
 
 const pikachu = new Pokemon("pikachu")
 const bulbasaur = new Pokemon("bulbasaur")
