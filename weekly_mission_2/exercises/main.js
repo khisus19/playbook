@@ -1,21 +1,68 @@
-const repo = {
-    name: "LaunchX",
-    author: "carlogilmar",
-    language: "JavaScript",
-    numberOfCommits: 100,
-    stars: 199,
-    forks: 299,
-    issues_open: 10,
-    issues_close: 10,
-    getTotalIssues: function(){
-      return this.issues_open + this.issues_close
-    },
-    getGeneralInfo: function(){
-      return `This repository ${this.name} was created by ${this.author}`
+const explorers = [
+  {
+    name: "Explorer 1",
+    exercises_completed: 10,
+    rate: 99,
+    city: "CDMX",
+    stack: [
+      "js",
+      "c#"
+    ],
+    missions: {
+      onboarding: {
+        isFinished: true,
+        exercisesFinished: true
+      },
+      frontend: {
+        isFinished: true,
+        exercisesFinished: true
+      }
     }
-   }
-   
-   console.log("Nombre del repo: " + repo.name)
-   console.log("Issues totales: " + repo.getTotalIssues())
-   console.log(repo.getGeneralInfo())
-   
+  },
+  {
+    name: "Explorer 2",
+    exercises_completed: 9,
+    city: "Veracruz",
+    rate: 50,
+    stack: [
+      "js"
+    ],
+    missions: {
+      onboarding: {
+        isFinished: false,
+        exercisesFinished: false
+      },
+      frontend: {
+        isFinished: false,
+        exercisesFinished: false
+      }
+    }
+  },
+  {
+    name: "Explorer 3",
+    exercises_completed: 3,
+    city: "Sonora",
+    rate: 100,
+    stack: [
+      "elixir"
+    ],
+    missions: {
+      onboarding: {
+        isFinished: true,
+        exercisesFinished: true
+      },
+      frontend: {
+        isFinished: false,
+        exercisesFinished: false
+      }
+    }
+  }
+]
+
+
+explorers.forEach(explorer => {
+  if (explorer.city.find('CDMX')) {
+    console.log(explorer.name);
+  }
+})
+
