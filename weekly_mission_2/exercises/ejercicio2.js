@@ -1,6 +1,6 @@
 const explorers = [
     {
-      name: "Explorer 1",
+      name: "Carlo",
       exercises_completed: 10,
       rate: 99,
       city: "CDMX",
@@ -20,7 +20,7 @@ const explorers = [
       }
     },
     {
-      name: "Explorer 2",
+      name: "Jesus",
       exercises_completed: 9,
       city: "Veracruz",
       rate: 50,
@@ -39,7 +39,7 @@ const explorers = [
       }
     },
     {
-      name: "Explorer 3",
+      name: "Fernanda",
       exercises_completed: 3,
       city: "Sonora",
       rate: 100,
@@ -122,3 +122,11 @@ const all_exercises = explorers.reduce((acc, item) => acc + item.exercises_compl
 console.log(all_exercises);
 
 // --- 7. Obtén la validación si al menos uno de los explorers tiene la propiedad exercisesFinished en frontend como true, usa SOME ---
+console.log('¿Hay algún explorer que haya terminado los ejercicios?:');
+const someExercisesFinished = explorers.some(item => item.missions.onboarding.exercisesFinished === false);
+console.log(someExercisesFinished);
+
+// --- 8.  Obtén la validación si todos los explorers tienen la propiedad isFinished del onboarding como true. Usa EVERY. ---
+console.log("¿Todos terminaron su misión?:")
+const everyoneFinishedMissions = explorers.every(item => item.missions.onboarding.isFinished === true);
+console.log(everyoneFinishedMissions)
