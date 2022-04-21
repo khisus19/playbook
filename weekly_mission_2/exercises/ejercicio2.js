@@ -86,16 +86,22 @@ explorers.forEach(explorer => {
 // --- 3. Listar los stacks de cada explorer
 console.log("Crea una nueva lista con las listas de stacks de cada explorer, usa MAP:");
 let stacks = [];
-explorers.forEach(explorer => {
+/* explorers.forEach(explorer => {
     explorer.stack.map(stck => stacks.push(stck))
     }
-)
+) */
 
-// explorers.forEach(explorer => stacks.push(explorer.stack));
+explorers.map(my_explorer => stacks.push(my_explorer.stack));
 console.log(stacks);
 
 // --- 4. Listar sólo los que tienen 'js' ---
 console.log("Obtén la lista de explorers que tengan en su stack 'js', usa FILTER (para validar un elemento en un lista se usa el método includes)")
+
+// Forma de Carlo
+const explorerWithJs = explorers.filter(explorer => explorer.stack.includes("js"));
+console.log(explorerWithJs);
+
+// Mi forma
 console.log("Los Explorer que tiene 'js' de stack son:")
 explorers.forEach(explorer => {
   if (explorer.stack.includes('js')) {
@@ -103,5 +109,16 @@ explorers.forEach(explorer => {
   }
 })
 
-// --- 5 Busca el primer explorer que sea de la CDMX ---
+// --- 5. Busca el primer explorer que sea de la CDMX ---
 console.log("Busca el primer explorer que sea de la CDMX, usa FIND")
+
+const firstExplorerCdmx = explorers.find(item => item.city === 'CDMX');
+console.log(firstExplorerCdmx);
+console.log(`El primer explorer de CDMX es: ${firstExplorerCdmx.name}`);
+
+// --- 6. Obtén la suma de todos los exercises_completed, usa REDUCE ---
+console.log("6. Obtén la suma de todos los exercises_completed, usa REDUCE");
+const all_exercises = explorers.reduce((acc, item) => acc + item.exercises_completed, 0);
+console.log(all_exercises);
+
+// --- 7. Obtén la validación si al menos uno de los explorers tiene la propiedad exercisesFinished en frontend como true, usa SOME ---

@@ -59,10 +59,8 @@ const explorers = [
   }
 ]
 
-
-explorers.forEach(explorer => {
-  if (explorer.city.find('CDMX')) {
-    console.log(explorer.name);
-  }
-})
+// --- 6. Obtén la suma de todos los exercises_completed, usa REDUCE ---
+console.log("6. Obtén la suma de todos los exercises_completed, usa REDUCE");
+const all_exercises = explorers.reduce((acc, item) => acc + item.exercises_completed, 0);
+console.log(all_exercises);
 
