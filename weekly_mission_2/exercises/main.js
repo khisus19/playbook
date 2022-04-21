@@ -59,8 +59,6 @@ const explorers = [
   }
 ]
 
-// --- 6. Obtén la suma de todos los exercises_completed, usa REDUCE ---
-console.log("6. Obtén la suma de todos los exercises_completed, usa REDUCE");
-const all_exercises = explorers.reduce((acc, item) => acc + item.exercises_completed, 0);
-console.log(all_exercises);
-
+// 8.  Obtén la validación si todos los explorers tienen la propiedad isFinished del onboarding como true. Usa EVERY.
+const everyoneFinishedMissions = explorers.every(item => item.missions.onboarding.isFinished === true);
+console.log(everyoneFinishedMissions)
