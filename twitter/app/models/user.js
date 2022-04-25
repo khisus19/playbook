@@ -15,10 +15,18 @@ class User {
         return this.bio;
     }
     get getDateCreated(){
-        return this.dateCreated
+        return this.dateCreated;
     }
     get getLastUpdated(){
-        return this.lastUpdated
+        return this.lastUpdated;
+    }
+
+    set setUsername(newUsername) {
+        this.username = newUsername;
+    }
+
+    set setBio(newBio) {
+        this.bio = newBio;
     }
 }
 
